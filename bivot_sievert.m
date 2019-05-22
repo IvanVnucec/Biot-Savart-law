@@ -5,26 +5,26 @@ I = 5;
 % X, Y, and Z MESH
 x_start =  -2;
 x_stop  =   2;
-x_inst  =  50;
+x_inst  =  51;
 
 y_start =  -2;
 y_stop  =   2;
-y_inst  =  50;
+y_inst  =  52;
 
 z_start =   -2;
 z_stop  =   2;
-z_inst  =  50;
+z_inst  =  53;
 
 % PARAMETRIZATION VARIABLE
 x = linspace(x_start, x_stop, x_inst);
 y = linspace(y_start, y_stop, y_inst);
 z = linspace(z_start, z_stop, z_inst);
 
-line = define_line([0, 0, 0]', [0, 0, 1]', 4, 50);
-circle1 = define_cicrle([0, 0, 2]', [0, 0, 1]', 1, 50);
-circle2 = define_cicrle([0, 0, 2]', [0, 1, 0]', 1, 50);
+line = define_line([0, 0, 0]', [0, 0, 1]', 4, 100);
+circle1 = define_cicrle([0, 0, 0]', [0, 0, 1]', 1, 500);
+circle2 = define_cicrle([0, 0, 0]', [0, 1, 0]', 1, 500);
 
-[curve, dl] = define_curve(circle1, circle2, line);
+[curve, dl] = define_curve(circle1, circle2);
 draw_curve(circle1, circle2, line);
 
 [X, Y, Z] = meshgrid(x, y, z);
@@ -65,5 +65,5 @@ B_z = permute(B_z, [2 1 3]);
 B_abs = permute(B_abs, [2 1 3]);
 
 figure(2);
-slice(X, Y, Z, log(B_abs), [0], [0], [2]);
+slice(X, Y, Z, log(B_abs), [0], [0], []);
 shading interp
