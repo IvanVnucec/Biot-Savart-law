@@ -1,4 +1,4 @@
-function rvector = vect_rot_zxy(vector, alpha, beta, gamma)
+function rvector = vect_rot_zxy(vector, vect_dir)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 Rz = rot_z(alpha);
