@@ -1,16 +1,16 @@
 % X, Y, and Z MESH (this specefies the drawing box
 % x_inst is number of points from x_start to x_stop to calculate mag field.
-x_start =  -2;
-x_stop  =   2;
-x_inst  =  40;
+x_start =  -5;
+x_stop  =   5;
+x_inst  =  30;
 
-y_start =  -2;
-y_stop  =   2;
-y_inst  =  40;
+y_start =  -5;
+y_stop  =   5;
+y_inst  =  30;
 
 z_start =  -5;
 z_stop  =   5;
-z_inst  =  40;
+z_inst  =  30;
 
 % PARAMETRIZATION VARIABLE
 x = linspace(x_start, x_stop, x_inst);
@@ -18,7 +18,7 @@ y = linspace(y_start, y_stop, y_inst);
 z = linspace(z_start, z_stop, z_inst);
 
 % This functions calculates points on a coil curve
-line = define_coil([0, 0, -4]', 0.5, 5, 7, 1000);
+line = define_custom_curve(5000);
 
 % This function calculates dl vectors
 [curve, dl] = define_curve(line);

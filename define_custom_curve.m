@@ -1,4 +1,4 @@
-function r = define_custom_curve(c_point, R, N, L, inst)
+function r = define_custom_curve(inst)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
