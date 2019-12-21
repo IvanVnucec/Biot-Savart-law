@@ -8,33 +8,48 @@ Bivot-Savart Law for calculating the Magnetic field of some parametrization curv
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Program requires [Aerospace Toolbox](https://www.mathworks.com/products/aerospace-toolbox.html) to be already installed.
+Matlab only
 
 ### Installing
 
 1. Clone this repository,
-2. Open `main.m` file and there you have orbit parameters to tweak.
+2. Open `main.m` file and there you have parameters to tweak.
 
 
 ## Running
 To get some data out of the system one should:
-1. Modify the orbit parameters and UTC time at the top of the `main.m` file:
+1. Modify the parameters in the `main.m` file:
 ```
-RAAN    =  38;                % Right Ascension of Ascendent Node [deg]
-w       =  35;                % Argument of perigee               [deg]
-v0      =  54;                % True anomaly at the departure     [deg]
-i       =  51.64;             % inclination                       [deg]
-a       =  6700;              % Major semi-axis           (>6378) [km]
-e       =  0.001;             % Eccentricity
-start_time = datetime('now'); % UTC time of sattelite starting point
-norb = 5;                     % number of orbits
-time_step = 60;               % Calculate point every time_step   [s],
-                              %   decrease for faster calculation
+x_start =  -2;
+x_stop  =   2;
+x_inst  =  40;
+
+y_start =  -2;
+y_stop  =   2;
+y_inst  =  40;
+
+z_start =  -5;
+z_stop  =   5;
+z_inst  =  40;
 ```
+Where `x_start` and `x_stop` (`y_start`, `z_start` etc..) specefies how big will the render be in terms of axes. Variables `x_inst`,  `y_inst` and `z_inst` respectivly are defining how much points are there to calculate magnetic field in their position.
+
+Also, user should define some curve to draw. Lets draw coil for example:
+To draw a coil user should write this line below.
+```
+line = define_coil([0, 0, -4]', 0.5, 5, 7, 1000);
+```
+The function `define_coil` is defined as `define_coil(c_point, Radius, Num_of_turns, Length, Instances)` where:
+- `c_point` is major-column vector of bottom center of coil, 
+- `Radius` is radius of coil,
+- `Num_of_turns` is how much turns the coil has over its lenght,
+- `Length` is length of coil,
+- `Instances` is number of points of the coil. For more precise calculation bigger number is better.
+
 2. Press Run button.
 
 ## Authors
@@ -45,10 +60,3 @@ time_step = 60;               % Calculate point every time_step   [s],
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-* Special thanks to Ennio Condoleo. This code is modified version of his program which can be found here: [LINK](https://www.mathworks.com/matlabcentral/fileexchange/45573-orbit3d)
-
-* This program was used as a Project on the FER CubeSat called FERSAT at the University of Zagreb. [LINK](https://www.fer.unizg.hr/zrk/FERSAT).
-
