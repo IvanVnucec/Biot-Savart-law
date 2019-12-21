@@ -8,6 +8,7 @@ function [curve, dl] = define_curve(varargin)
     for k = 1 : nargin
         r_k = varargin{k};
 
+        % This function aproximates derivatives of adjecent elements
         dl_k = my_diff(r_k);
 
         curve = cat(2, curve, r_k);
