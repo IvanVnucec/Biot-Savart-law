@@ -2,6 +2,7 @@
 
 Bivot-Savart Law for calculating the Magnetic field of some parametrization curves
 
+# Output examples
 ![Toroid](https://github.com/IvanVnucec/Biot-Savart-law/blob/master/output_examples/toroid.bmp)
 ![Coil1](https://github.com/IvanVnucec/Biot-Savart-law/blob/master/output_examples/coil1.bmp)
 ![Coil2](https://github.com/IvanVnucec/Biot-Savart-law/blob/master/output_examples/coil2.bmp)
